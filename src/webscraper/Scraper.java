@@ -28,7 +28,7 @@ public class Scraper
         driver.navigate().to("http://www.city-data.com/city/St.-Louis-Missouri.html");
     }
     
-        public void login() throws InterruptedException
+    public void login() throws InterruptedException
     {
         
         WebElement usernameElem;
