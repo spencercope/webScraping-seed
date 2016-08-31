@@ -26,7 +26,7 @@ public class Scraper
     
     public Scraper()
     {
-        System.setProperty("webdriver.chrome.driver", "C:/Users/spencer/Documents/Code/LiveOnGithub/webScraping-seed/lib/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:/Users/Documents/webScraping-seed/lib/chromedriver.exe");
         driver = new ChromeDriver();
     }
     
@@ -66,6 +66,10 @@ public class Scraper
         submitElem.click();
     }
     
+    
+    //some websites will kick you off for too many hits on a certain time period
+    //so to keep scraping all night long you many have to make your application 
+    //act more human.  Adding in random sleeps may help.
     public long getRandLong()
     {
         long lowerBound = 2000;
