@@ -10,9 +10,6 @@ the console for each of the five cities.
 
 
 Links
-
 -[Selenium](http://www.seleniumhq.org/)
-
 -[Robots.txt](http://www.robotstxt.org/robotstxt.html)
-
 -[Chromedriver.exe](https://sites.google.com/a/chromium.org/chromedriver/downloads)
