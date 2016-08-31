@@ -7,3 +7,9 @@ Next, you will have to specify the path to chromedriver.exe.  This will be the p
 
 Then you are ready to run the project.  It will loop through the urlArray and output the education info (found on city-data.com) to 
 the console for each of the five cities. 
+
+
+Links
+-[Selenium](http://www.seleniumhq.org/)
+-[Robots.txt](http://www.robotstxt.org/robotstxt.html)
+-[Chromedriver.exe](https://sites.google.com/a/chromium.org/chromedriver/downloads)
