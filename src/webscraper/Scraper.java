@@ -15,27 +15,49 @@ public class Scraper
 {
     long sleeper = 2000;
     WebDriver driver;
+    String[] urlArray = new String[]{
+        "http://www.city-data.com/city/St.-Louis-Missouri.html",                            //once you know the url pattern
+        "http://www.city-data.com/city/Chicago-Illinois.html",                              //of the website you want to scrape
+        "http://www.city-data.com/city/New-York-New-York.html",                             //you can use excel to concatenate
+        "http://www.city-data.com/city/Los-Angeles-California.html",                        //the urls and paste into here
+        "http://www.city-data.com/city/Seattle-Washington.html"
+    };
 
     
     public Scraper()
     {
-        System.setProperty("webdriver.chrome.driver", "C:/Users/spencer/Documents/Code/WebScraper/lib/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:/Users/spencer/Documents/Code/LiveOnGithub/webScraping-seed/lib/chromedriver.exe");
         driver = new ChromeDriver();
     }
     
-    public void openSite()
+    public void loopAndGrab()
     {
-        driver.navigate().to("http://www.city-data.com/city/St.-Louis-Missouri.html");
+        for (int i = 0; i < urlArray.length; i++)
+        {
+            driver.navigate().to(urlArray[i]);
+            String educationInfo = driver.findElement(By.id("education-info")).getText();
+            System.out.println("\n" + urlArray[i]);
+            System.out.println(educationInfo);
+        }
     }
+    
+    public void closeBrowser()
+    {
+        driver.close();
+    }
+    
+    
+    
+    //some extra methods that may be helpful for your web scrape
     
     public void login() throws InterruptedException
     {
         
         WebElement usernameElem;
         WebElement passwordElem;
-        usernameElem = driver.findElement(By.id("username"));
-        passwordElem = driver.findElement(By.id("password"));
-        WebElement submitElem = driver.findElement(By.xpath("Xpath"));
+        usernameElem = driver.findElement(By.id("id of username element"));
+        passwordElem = driver.findElement(By.id("id of password element"));
+        WebElement submitElem = driver.findElement(By.xpath("xPath of submit button"));
         
         usernameElem.sendKeys("your_username");
         passwordElem.sendKeys("your_password");
@@ -53,11 +75,4 @@ public class Scraper
         long randLong = lowerBound + (long)(r.nextDouble()*(upperBound - lowerBound));
         return randLong;
     }
-    
-    
-    public void closeBrowser()
-    {
-        driver.close();
-    }
-    
 }
