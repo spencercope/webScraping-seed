@@ -1,7 +1,7 @@
 package webscraper;
 
 
-public class WebScraper 
+public class AppMain 
 {
     public static void main(String[] args) 
     {
